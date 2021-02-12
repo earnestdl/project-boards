@@ -1,11 +1,11 @@
 name: Voting Automation for Content Management Project Board
 
 on:
-  project_card:
+  issues:
     types: [edited]
 
 jobs:
   get-:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Project Card Edited!"
+      - run: echo "Issue Edited!"
