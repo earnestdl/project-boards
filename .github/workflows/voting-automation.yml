@@ -5,7 +5,7 @@ on:
     types: [edited]
 
 jobs:
-  get-:
+  test:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Issue Edited!"
