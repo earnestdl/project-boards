@@ -1,11 +1,11 @@
 name: Voting Automation for Content Management Project Board
 
 on:
-  issues:
+  issue_comment:
     types: [edited]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Issue Edited!"
+      - run: echo "Issue Comment Edited!"
