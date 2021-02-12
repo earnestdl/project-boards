@@ -1,0 +1,12 @@
+# https://docs.github.com/en/rest/reference/issues#list-repository-issues
+name: list issues from project
+
+on:[workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        run: curl -sH "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/earnestdl/project-boards/issues

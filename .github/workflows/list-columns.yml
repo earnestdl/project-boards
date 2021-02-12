@@ -1,0 +1,11 @@
+# https://docs.github.com/en/rest/reference/projects#list-project-columns
+name: list columns of a project
+
+on:[workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list columns
+        run: echo "list project columns"
