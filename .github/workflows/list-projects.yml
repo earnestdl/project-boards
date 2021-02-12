@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: list projects
-        run: curl -sH "Accept: application/vnd.github.inertia-preview+json" https://api.github.com/repos/earnestdl/project-boards/projects
+        uses: wei/curl@master
+        with: 
+          args: -sH "Accept: application/vnd.github.inertia-preview+json" https://api.github.com/repos/earnestdl/project-boards/projects
