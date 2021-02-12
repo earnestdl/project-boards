@@ -1,6 +1,6 @@
 name: list reactions from an issue
 
-on:[workflow_dispatch]
+on: workflow_dispatch
 
 jobs:
   build:

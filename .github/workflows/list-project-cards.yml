@@ -1,7 +1,7 @@
 # https://docs.github.com/en/rest/reference/projects#list-project-cards
 name: list project cards from a column
 
-on:[workflow_dispatch]
+on: workflow_dispatch
 
 jobs:
   build:

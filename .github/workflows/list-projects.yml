@@ -1,7 +1,7 @@
 # https://docs.github.com/en/rest/reference/projects#list-repository-projects
 name: list projects from a repo
 
-on:[workflow_dispatch]
+on: workflow_dispatch
 
 jobs:
   build:
