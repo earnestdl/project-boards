@@ -1,0 +1,9 @@
+name: Voting Automation for Content Management Project Board
+
+on: issue_comment
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Comment Triggered Event"
