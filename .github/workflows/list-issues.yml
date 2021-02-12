@@ -5,10 +5,13 @@ on: workflow_dispatch
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: checkout repo content
         uses: indiesdev/curl@v1
+        id: api
         with: 
           headers: '{ "Accept": "application/vnd.github.v3+json" }' 
           url: https://api.github.com/repos/earnestdl/project-boards/issues
+      - name: 'Use response'
+        run: echo ${{ steps.api.outputs.response }}
