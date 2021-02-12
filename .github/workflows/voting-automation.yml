@@ -1,9 +1,9 @@
 name: Voting Automation for Content Management Project Board
 
-on: issue_comment
+on: issues
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Issue Comment Edited!"
+      - run: echo "Issue Triggered Event"
