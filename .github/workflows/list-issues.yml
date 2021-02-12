@@ -1,5 +1,5 @@
 # https://docs.github.com/en/rest/reference/issues#list-repository-issues
-name: list issues from project
+name: List issues from project
 
 on: workflow_dispatch
 
@@ -7,11 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - name: checkout repo content
+      - name: Make API call
         uses: indiesdev/curl@v1
         id: api
         with: 
           headers: '{ "Accept": "application/vnd.github.v3+json" }' 
           url: https://api.github.com/repos/earnestdl/project-boards/issues
-      - name: 'Use response'
+      - name: Use response
         run: echo ${{ steps.api.outputs.response }}
