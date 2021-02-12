@@ -1,8 +1,6 @@
 name: Voting Automation for Content Management Project Board
 
-on:
-  issue_comment:
-    types: [edited]
+on: issue_comment
 
 jobs:
   test:
