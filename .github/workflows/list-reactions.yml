@@ -7,4 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: list reactions
-        run: curl -sH "Accept: application/vnd.github.squirrel-girl-preview+json" https://api.github.com/repos/earnestdl/project-boards/issues/1/reactions | \grep \"content\"
+        uses: indiesdev/curl@v1
+        with: 
+          headers: '{ "Accept": "application/vnd.github.squirrel-girl-preview+json" }' 
+          url: https://api.github.com/repos/earnestdl/project-boards/issues/1/reactions

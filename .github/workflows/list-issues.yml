@@ -8,4 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
-        run: curl -sH "Accept: application/vnd.github.v3+json" https://api.github.com/repos/earnestdl/project-boards/issues
+        uses: indiesdev/curl@v1
+        with: 
+          headers: '{ "Accept": "application/vnd.github.v3+json" }' 
+          url: https://api.github.com/repos/earnestdl/project-boards/issues
