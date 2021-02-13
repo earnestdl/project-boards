@@ -13,8 +13,9 @@ jobs:
         with:
           python-version: 3.8
       - name: Run python script
+        working-directory: ./.github/workflows/scripts/
         run: |
-          python print-secrets.py
+          python voting-automation.py
         env:
-          KEY: ${{ secrets.KEY }}
-          VAL: ${{ secrets.VAL }}
+          user: ${{ secrets.user }}
+          pass: ${{ secrets.pass }}
