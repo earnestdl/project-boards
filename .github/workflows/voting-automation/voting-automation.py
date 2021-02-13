@@ -9,6 +9,8 @@ passwd = os.environ.get('pass')
 
 def get_issues():
 
+    print('\nIssues:')
+
     url = "%s/repos/%s/%s/issues" % (api,org,repo) 
     headers = {'Accept': 'application/vnd.github.v3+json'}
 
@@ -16,7 +18,7 @@ def get_issues():
     if resp.status_code != 200:
         raise ApiError('GET /tasks/ {}'.format(resp.status_code))
     for issue in resp.json():
-        print('{} {}'.format(issue['number'], issue['title']))
+        print('number: {} title: {}'.format(issue['number'], issue['title']))
 
 
 if __name__ == "__main__":
