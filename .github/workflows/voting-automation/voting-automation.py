@@ -4,8 +4,8 @@ import requests
 org = "earnestdl"
 repo = "project-boards"
 api = "https://api.github.com"
-user = os.environ.get('user'))
-passwd = os.environ.get('pass'))
+user = os.environ.get('user')
+passwd = os.environ.get('pass')
 
 def get_issues():
 
