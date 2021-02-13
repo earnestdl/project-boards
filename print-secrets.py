@@ -1,4 +1,4 @@
 import os
 
-print(os.environ[KEY])
-print(os.environ[VAL])
+print(os.environ[key])
+print(os.environ[val])
