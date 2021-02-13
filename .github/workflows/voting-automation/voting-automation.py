@@ -36,5 +36,5 @@ def reactions(issue):
 
 if __name__ == "__main__":
 
-    for issue in get_issues():
+    for issue in issues():
         print('number: {} title: {}'.format(issue['number'], issue['title']))
