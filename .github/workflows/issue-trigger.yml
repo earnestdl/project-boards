@@ -1,5 +1,5 @@
 # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#issues
-name: Voting Automation for Content Management Project Board
+name: Issue Trigger
 
 on: issues
 

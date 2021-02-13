@@ -1,5 +1,5 @@
 # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#issue_comment
-name: Voting Automation for Content Management Project Board
+name: Comment trigger
 
 on: issue_comment
 

@@ -1,4 +1,4 @@
-name: Print secret variables from a python script in the repo
+name: Voting Automation for Content Management Project Board
 
 on: workflow_dispatch
 
