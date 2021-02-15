@@ -1,5 +1,10 @@
-import requests
 from settings import *
+import os
+import requests
+
+api = "https://api.github.com"
+user = os.environ.get('user')
+passwd = os.environ.get('pass')
 
 def issues():
     url = "%s/repos/%s/%s/issues" % (api,org,repo) 
@@ -25,3 +30,4 @@ if __name__ == "__main__":
 
     for reaction in reactions(1):    
         print('reaction: {}'.format(reaction['content']))
+
