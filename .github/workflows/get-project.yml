@@ -13,5 +13,6 @@ jobs:
         with: 
           headers: '{ "Accept": "application/vnd.github.inertia-preview+json" }' 
           url: https://api.github.com/projects/1
+          basic-auth: ${{ secrets.user }}:${{ secrets.pass }}
       - name: Use response
         run: echo ${{ steps.api.outputs.response }}
