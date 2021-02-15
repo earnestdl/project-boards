@@ -11,7 +11,7 @@ jobs:
         uses: indiesdev/curl@v1
         id: api
         with: 
-          headers: '{ "Accept": "application/vnd.github.inertia-preview+json" }' 
+          headers: '{ "Accept": "application/vnd.github.inertia-preview+json", "User-Agent": "request" }' 
           url: https://api.github.com/projects/1
           basic-auth: ${{ secrets.user }}:${{ secrets.pass }}
       - name: Use response
