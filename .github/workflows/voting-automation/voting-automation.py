@@ -1,11 +1,5 @@
-import os
+import settings
 import requests
-
-org = "earnestdl"
-repo = "project-boards"
-api = "https://api.github.com"
-user = os.environ.get('user')
-passwd = os.environ.get('pass')
 
 def issues():
     url = "%s/repos/%s/%s/issues" % (api,org,repo) 
