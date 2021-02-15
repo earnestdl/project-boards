@@ -1,0 +1,17 @@
+# https://docs.github.com/en/rest/reference/projects#get-a-project
+name: Get single project
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Make API call
+        uses: indiesdev/curl@v1
+        id: api
+        with: 
+          headers: '{ "Accept": "application/vnd.github.inertia-preview+json" }' 
+          url: https://api.github.com/projects/columns/1
+      - name: Use response
+        run: echo ${{ steps.api.outputs.response }}
