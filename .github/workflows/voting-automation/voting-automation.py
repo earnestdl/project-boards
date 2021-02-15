@@ -1,5 +1,5 @@
-import settings
 import requests
+from settings import *
 
 def issues():
     url = "%s/repos/%s/%s/issues" % (api,org,repo) 
