@@ -20,3 +20,4 @@ jobs:
         env:
           user: ${{ secrets.user }}
           pass: ${{ secrets.pass }}
+          token: ${{ secrets.GITHUB_TOKEN }}
