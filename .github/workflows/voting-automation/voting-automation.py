@@ -43,4 +43,4 @@ if __name__ == "__main__":
     print('\n')
 
     for project in projects():
-        print('number: {}\ntitle: {}'.format(issue['number'], issue['name']))
+        print('number: {}\ntitle: {}'.format(project['number'], project['name']))
