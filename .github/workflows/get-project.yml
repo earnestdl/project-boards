@@ -11,7 +11,7 @@ jobs:
         uses: indiesdev/curl@v1
         id: api
         with: 
-          headers: '{ "Accept": "application/vnd.github.inertia-preview+json", "Authorization": "token ${{ secrets.pass }}" }' 
+          headers: '{ "Accept": "application/vnd.github.inertia-preview+json", "Authorization": "token ${{ secrets.GITHUB_TOKEN }}" }' 
           url: https://api.github.com/projects/1
       - name: Use response
         run: echo ${{ steps.api.outputs.response }}
