@@ -17,7 +17,7 @@ def reactions(issue):
     headers = {'Accept': 'application/vnd.github.squirrel-girl-preview+json'}
     return request(url,headers)
 
-def projects()
+def projects():
     url = "%s/repos/%s/%s/projects" % (api,org,repo) 
     headers = {'Accept': 'application/vnd.github.inertia-preview+json',
                 'Authorization': 'Bearer ' + token }
