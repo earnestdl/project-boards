@@ -2,9 +2,6 @@ from settings import *
 import os
 import requests
 
-api = "https://api.github.com"
-user = os.environ.get('user')
-passwd = os.environ.get('pass')
 token = os.environ.get('token')
 
 def issues():
@@ -32,15 +29,14 @@ def request(url,headers):
 
 if __name__ == "__main__":
 
+    print('\nIssues:')
     for issue in issues():
         print('number: {}\ntitle: {}'.format(issue['number'], issue['title']))
 
-    print('\n')
-
+    print('Reactions:')
     for reaction in reactions(1):    
         print('reaction: {}'.format(reaction['content']))
 
     print('\n')
-
     for project in projects():
         print('number: {}\ntitle: {}'.format(project['number'], project['name']))
