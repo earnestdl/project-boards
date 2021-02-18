@@ -33,10 +33,10 @@ if __name__ == "__main__":
     for issue in issues():
         print('number: {}\ntitle: {}'.format(issue['number'], issue['title']))
 
-    print('Reactions:')
+    print('\nReactions:')
     for reaction in reactions(1):    
         print('reaction: {}'.format(reaction['content']))
 
-    print('\n')
+    print('\nProjects:')
     for project in projects():
         print('number: {}\ntitle: {}'.format(project['number'], project['name']))
