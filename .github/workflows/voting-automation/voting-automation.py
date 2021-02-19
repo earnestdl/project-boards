@@ -21,7 +21,7 @@ def projects():
     return request(url,headers)
     
 def columns(project):
-    url = "%s/projects/columns/%s" % (api,project) 
+    url = "%s/projects/%s/columns" % (api,project) 
     headers = {'Accept': 'application/vnd.github.inertia-preview+json',
                 'Authorization': 'Bearer ' + token }
     return request(url,headers)
