@@ -47,9 +47,9 @@ if __name__ == "__main__":
     for project in projects():
         print('id: {}\ntitle: {}'.format(project['id'], project['name']))
 
-#    print('\nColumns:')
-#    for column in columns(1):
-#        print('id: {}\nname: {}'.format(column['id'], column['name']))
+    print('\nColumns:')
+    for column in columns(11730016):
+        print('id: {}\nname: {}'.format(column['id'], column['name']))
 
 
 #    print('\nColumn 2:')
