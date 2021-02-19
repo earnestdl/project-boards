@@ -26,6 +26,12 @@ def columns(project):
                 'Authorization': 'Bearer ' + token }
     return request(url,headers)
 
+def cards(column):
+    url = "%s/projects/columns/%s/cards" % (api,column) 
+    headers = {'Accept': 'application/vnd.github.inertia-preview+json',
+                'Authorization': 'Bearer ' + token }
+    return request(url,headers)
+
 def request(url,headers):
     resp = requests.get(url, headers=headers)
     if resp.status_code != 200:
@@ -50,6 +56,11 @@ if __name__ == "__main__":
     print('\nColumns:')
     for column in columns(11730016):
         print('id: {}\nname: {}'.format(column['id'], column['name']))
+
+    print('\nCards:')
+    for column in columns(12899758):
+        print('id: {}\nnote: {}\nissue: {}'.format(column['id'], column['note'], card['content_url']))
+
 
 
 #    print('\nColumn 2:')
