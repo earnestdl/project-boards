@@ -58,8 +58,8 @@ if __name__ == "__main__":
         print('id: {}\nname: {}'.format(column['id'], column['name']))
 
     print('\nCards:')
-    for column in columns(12899758):
-        print('id: {}\nnote: {}\nissue: {}'.format(column['id'], column['note'], card['content_url']))
+    for card in cards(12899758):
+        print('id: {}\nnote: {}\nissue: {}'.format(card['id'], card['note'], card['content_url']))
 
 
 
