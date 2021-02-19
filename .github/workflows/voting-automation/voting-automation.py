@@ -45,11 +45,11 @@ if __name__ == "__main__":
 
     print('\nProjects:')
     for project in projects():
-        print('number: {}\ntitle: {}'.format(project['number'], project['name']))
+        print('id: {}\ntitle: {}'.format(project['id'], project['name']))
 
-    print('\Columns:')
-    for column in columns(1):
-        print('id: {}\nname: {}'.format(column['id'], column['name']))
+#    print('\nColumns:')
+#    for column in columns(1):
+#        print('id: {}\nname: {}'.format(column['id'], column['name']))
 
 
 #    print('\nColumn 2:')
