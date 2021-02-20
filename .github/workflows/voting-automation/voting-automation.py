@@ -72,7 +72,7 @@ if __name__ == "__main__":
         print('Upvotes: %d' % uvote)
         print('Downvotes: %d' % dvote)
 
-        if uvote = 0 and dvote = 0:
+        if uvote == 0 and dvote == 0:
             print("no votes! adding label...")
             add_label(issue)
         if uvote > dvote:
