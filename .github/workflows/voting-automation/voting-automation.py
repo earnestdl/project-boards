@@ -47,9 +47,11 @@ if __name__ == "__main__":
 
     print('\nList cards in the In Progress column')
     for card in cards(col_in_progress):  
+
         issue = card['content_url'].split('/')[-1]
         print("\nIssue: %s" % issue)
-        for reaction in reactions(issue)
+
+        for reaction in reactions(issue):
             print('reaction: {}'.format(reaction['content']))
             #print('id: {}\nnote: {}\nissue: {}'.format(card['id'], card['note'], card['content_url']))
 
