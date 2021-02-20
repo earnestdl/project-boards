@@ -66,6 +66,6 @@ if __name__ == "__main__":
             if diff > 2:
                 print("there are 2 more upvotes than downvotes. move to next column!")
         elif dvote > uvote:
-            diff = dvote=uvote
+            diff = dvote-uvote
             if diff > 2:
                 print("there are 2 more downvotes than upvotes. close this issue!")
