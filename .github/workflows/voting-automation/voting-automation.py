@@ -62,8 +62,8 @@ if __name__ == "__main__":
             elif reaction['content'] == '-1':
                 dvote=dvote+1
 
-        print('\nUpvotes: %d' % uvote)
-        print('\nDownvotes: %d' % dvote)
+        print('Upvotes: %d' % uvote)
+        print('Downvotes: %d' % dvote)
 
 
             #print('id: {}\nnote: {}\nissue: {}'.format(card['id'], card['note'], card['content_url']))
