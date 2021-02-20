@@ -41,27 +41,34 @@ def request(url,headers):
 
 if __name__ == "__main__":
 
-    print('\nIssues:')
-    for issue in issues():
-        print('number: {}\ntitle: {}'.format(issue['number'], issue['title']))
 
-    print('\nReactions:')
-    for reaction in reactions(1):    
-        print('reaction: {}'.format(reaction['content']))
+    # get a list of cards in the "In Progress" column and add them to an array
+    # so we have a reference to them later when we need to move them to the next column
 
-    print('\nProjects:')
-    for project in projects():
-        print('id: {}\ntitle: {}'.format(project['id'], project['name']))
-
-    print('\nColumns:')
-    for column in columns(11730016):
-        print('id: {}\nname: {}'.format(column['id'], column['name']))
-
-    print('\nCards:')
-    for card in cards(12899758):
-        print('id: {}\nnote: {}\nissue: {}'.format(card['id'], card['note'], card['content_url']))
+    print('\nList cards in the In Progress column')
+    for card in cards(col_in_progress):  
+        issue = card['content_url'].split('/')[-1]
+        print("\nIssue: %s" % issue)
+        for reaction in reactions(issue)
+            print('reaction: {}'.format(reaction['content']))
+            #print('id: {}\nnote: {}\nissue: {}'.format(card['id'], card['note'], card['content_url']))
 
 
+#    print('\nIssues:')
+#    for issue in issues():
+#        print('number: {}\ntitle: {}'.format(issue['number'], issue['title']))
+
+#    print('\nReactions:')
+#    for reaction in reactions(1):    
+#        print('reaction: {}'.format(reaction['content']))
+
+#    print('\nProjects:')
+#    for project in projects():
+#        print('id: {}\ntitle: {}'.format(project['id'], project['name']))
+
+#    print('\nColumns:')
+#    for column in columns(project_id):
+#        print('id: {}\nname: {}'.format(column['id'], column['name']))
 
 #    print('\nColumn 2:')
 #    for column in column(2):
