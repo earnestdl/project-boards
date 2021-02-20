@@ -14,18 +14,6 @@ def reactions(issue):
     headers = {'Accept': 'application/vnd.github.squirrel-girl-preview+json'}
     return get(url,headers)
 
-def projects():
-    url = "%s/repos/%s/%s/projects" % (api,org,repo) 
-    headers = {'Accept': 'application/vnd.github.inertia-preview+json',
-                'Authorization': 'Bearer ' + token }
-    return get(url,headers)
-    
-def columns(project):
-    url = "%s/projects/%s/columns" % (api,project) 
-    headers = {'Accept': 'application/vnd.github.inertia-preview+json',
-                'Authorization': 'Bearer ' + token }
-    return get(url,headers)
-
 def cards(column):
     url = "%s/projects/columns/%s/cards" % (api,column) 
     headers = {'Accept': 'application/vnd.github.inertia-preview+json',
@@ -62,7 +50,6 @@ if __name__ == "__main__":
         issue = card['content_url'].split('/')[-1]
 
         print("\nIssue: %s" % issue)
-
         for reaction in reactions(issue):
             if reaction['content'] == '+1':
                 uvote=uvote+1
@@ -71,7 +58,6 @@ if __name__ == "__main__":
 
         print('Upvotes: %d' % uvote)
         print('Downvotes: %d' % dvote)
-
         if uvote == 0 and dvote == 0:
             print("no votes! adding label...")
             add_label(issue)
@@ -83,6 +69,3 @@ if __name__ == "__main__":
             diff = dvote=uvote
             if diff > 2:
                 print("there are 2 more downvotes than upvotes. close this issue!")
-
-
-
