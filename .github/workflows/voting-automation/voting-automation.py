@@ -57,9 +57,9 @@ if __name__ == "__main__":
         for reaction in reactions(issue):
             #print('reaction: {}'.format(reaction['content']))
 
-            if reaction == '+1':
+            if reaction['content'] == '+1':
                 uvote=uvote+1
-            elif reaction == '-1':
+            elif reaction['content'] == '-1':
                 dvote=dvote+1
 
         print('\nUpvotes: %d' % uvote)
