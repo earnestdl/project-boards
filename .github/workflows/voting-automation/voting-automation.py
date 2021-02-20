@@ -45,14 +45,27 @@ if __name__ == "__main__":
     # get a list of cards in the "In Progress" column and add them to an array
     # so we have a reference to them later when we need to move them to the next column
 
+
     print('\nList cards in the In Progress column')
     for card in cards(col_in_progress):  
 
+        uvote=0
+        dvote=0
         issue = card['content_url'].split('/')[-1]
         print("\nIssue: %s" % issue)
 
         for reaction in reactions(issue):
-            print('reaction: {}'.format(reaction['content']))
+            #print('reaction: {}'.format(reaction['content']))
+
+            if reaction == '+1':
+                uvote=uvote+1
+            elif reaction == '-1':
+                dvote=dvote+1
+
+        print('\nUpvotes: %d' % uvote)
+        print('\nDownvotes: %d' % dvote)
+
+
             #print('id: {}\nnote: {}\nissue: {}'.format(card['id'], card['note'], card['content_url']))
 
 
