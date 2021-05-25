@@ -6,8 +6,11 @@ from api.github import pulls
 print('Listing folders in root of branch:')
 os.system("ls -l ../../..")
 
+state='open'
+branch='preview'
+
 print('\nEnumerating open pull requests:')
-for pull in pulls(open):
+for pull in pulls(state,branch):
 
     print("\nTitle: %s" % (pull['title']))
     print("Number: %s" % (pull['number']))
@@ -18,3 +21,5 @@ for pull in pulls(open):
     print("URL: %s" % (pull['url']))
 
 # test for additional pull request from 'pull-requests' branch to 'preview' branch
+
+# make some more changes to test additional PRs
