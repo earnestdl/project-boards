@@ -1,4 +1,4 @@
-name: Voting Automation for Content Management Project Board
+name: Voting Automation for Project Board
 
 on: workflow_dispatch
 
