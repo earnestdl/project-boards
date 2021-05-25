@@ -1,4 +1,4 @@
-from ..repo.config import org, name
+from repo.config import org, name
 import os
 import requests
 

@@ -1,5 +1,5 @@
-from .repo.config import col_in_progress
-from .api.github import cards, reactions, add_label
+from repo.config import col_in_progress
+from api.github import cards, reactions, add_label
 
 print('\nList cards in the In Progress column:')
 for card in cards(col_in_progress):  
