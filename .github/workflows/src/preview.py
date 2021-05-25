@@ -13,3 +13,5 @@ for pull in pulls(open):
     print("Head Branch:  %s" % (pull['head']['ref']))
     print("Base Branch: %s" % (pull['base']['ref']))
     print("URL: %s" % (pull['url']))
+
+# test for additional pull request from 'pull-requests' branch to 'preview' branch
