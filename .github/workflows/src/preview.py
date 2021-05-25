@@ -1,10 +1,13 @@
 import os
 from api.github import pulls
 
-print('\nEnumerating Open Pull Requests:')
-for pull in pulls(open):
+# demonstrate that we have access to repo files in 'preview branch'.  
+# from here, we can merge following pull requests into preview and rebuild
+print('Listing folders in root of branch:')
+os.system("ls -l ../../..")
 
-    os.system("ls -l ../../..")
+print('\nEnumerating open pull requests:')
+for pull in pulls(open):
 
     print("\nTitle: %s" % (pull['title']))
     print("Number: %s" % (pull['number']))
