@@ -28,6 +28,11 @@ def add_label(issue):
     payload = '{"labels":["needs votes"]}'
     return post(url,headers,payload)
 
+def pulls(state):
+    url = "%s/repos/%s/%s/pulls?state=%s" % (api,org,name,state)
+    headers = {'Accept': 'application/vnd.github.v3+json',}
+    return get(url,headers)
+
 
 # read data from endpoint
 def get(url,headers):
