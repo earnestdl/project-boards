@@ -6,5 +6,10 @@ for pull in pulls(open):
 
     os.system("ls -l ../../..")
 
-    print("\nNumber: %s" % (pull['number']))
-    print("Title: %s" % (pull['title']))
+    print("\nTitle: %s" % (pull['title']))
+    print("Number: %s" % (pull['number']))
+    print("State: %s" % (pull['state']))
+    print("Body: %s" % (pull['body']))
+    print("Head Branch:  %s" % (pull['head']['ref']))
+    print("Base Branch: %s" % (pull['base']['ref']))
+    print("URL: %s" % (pull['url']))
