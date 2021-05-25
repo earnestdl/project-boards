@@ -28,8 +28,8 @@ def add_label(issue):
     payload = '{"labels":["needs votes"]}'
     return post(url,headers,payload)
 
-def pulls(state):
-    url = "%s/repos/%s/%s/pulls?state=%s" % (api,org,name,state)
+def pulls(state,branch):
+    url = "%s/repos/%s/%s/pulls?state=%s&base=%s" % (api,org,name,state,branch)
     headers = {'Accept': 'application/vnd.github.v3+json',}
     return get(url,headers)
 
