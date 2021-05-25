@@ -1,15 +1,15 @@
-from .settings import *
-from .endpoints import api
+from .config import repo
+from .api import github
 
 print('\nList cards in the In Progress column:')
-for card in api.cards(col_in_progress):  
+for card in github.cards(repo.col_in_progress):  
 
     uvote=0
     dvote=0
     issue = card['content_url'].split('/')[-1]
 
     print("\nIssue: %s" % issue)
-    for reaction in api.reactions(issue):
+    for reaction in github.reactions(issue):
         if reaction['content'] == '+1':
             uvote=uvote+1
         elif reaction['content'] == '-1':
@@ -19,7 +19,7 @@ for card in api.cards(col_in_progress):
     print('Downvotes: %d' % dvote)
     if uvote == 0 and dvote == 0:
         print("no votes! adding label...")
-        api.add_label(issue)
+        github.add_label(issue)
     if uvote > dvote:
         diff = uvote-dvote
         if diff > 2:
