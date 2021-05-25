@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.8
       - name: Run python script
-        working-directory: ./.github/workflows/scripts
+        working-directory: ./.github/workflows/src
         run: |
           python -m pip install -r requirements.txt
           python voting.py
