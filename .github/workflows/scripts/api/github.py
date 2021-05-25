@@ -1,4 +1,4 @@
-from ..config import repo
+from ..repo.config import org, name
 import os
 import requests
 
@@ -6,12 +6,12 @@ api = "https://api.github.com"
 token = os.environ.get('token')
 
 def issues():
-    url = "%s/repos/%s/%s/issues" % (api,repo.org,repo.name) 
+    url = "%s/repos/%s/%s/issues" % (api,org,name) 
     headers = {'Accept': 'application/vnd.github.v3+json'}
     return get(url,headers)
 
 def reactions(issue):
-    url = "%s/repos/%s/%s/issues/%s/reactions" % (api,repo.org,repo.name,issue) 
+    url = "%s/repos/%s/%s/issues/%s/reactions" % (api,org,name,issue) 
     headers = {'Accept': 'application/vnd.github.squirrel-girl-preview+json'}
     return get(url,headers)
 
@@ -22,7 +22,7 @@ def cards(column):
     return get(url,headers)
 
 def add_label(issue):
-    url = "%s/repos/%s/%s/issues/%s/labels" % (api,repo.org,repo.name,issue) 
+    url = "%s/repos/%s/%s/issues/%s/labels" % (api,org,name,issue) 
     headers = {'Accept': 'application/vnd.github.v3+json',
                 'Authorization': 'Bearer ' + token }
     payload = '{"labels":["needs votes"]}'
