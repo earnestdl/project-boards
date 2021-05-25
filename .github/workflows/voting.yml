@@ -15,6 +15,7 @@ jobs:
       - name: Run python script
         working-directory: ./.github/workflows/src
         run: |
+          python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
           python voting.py
         env:
