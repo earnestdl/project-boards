@@ -1,4 +1,4 @@
-name: Project Board Voting
+name: Content Development Voting
 
 on: workflow_dispatch
 
