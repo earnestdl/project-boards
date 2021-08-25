@@ -12,6 +12,7 @@ jobs:
       name: ${{ matrix.os }} py${{ matrix.python-version }}
       steps:
         - uses: actions/checkout@v2
+        - uses: jurplel/install-qt-action@v2
         - uses: s-weigand/setup-conda@v1.0.7
           name: Setup Conda
           with:
@@ -23,9 +24,7 @@ jobs:
             conda --version
             which python
             python --version
+            which qmake
             pwd
             ls
-        - name: Upgrade pip
-          run: |
-            python -m pip install --upgrade pip
 
