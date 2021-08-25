@@ -1,0 +1,20 @@
+name: Github Workflow Notify
+
+on: workflow_dispatch
+
+jobs:
+  notify:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: install ssmtp
+        run: apt-get update; apt-get install -y ssmtp
+      - name: config ssmtp
+        run: cat ${{ secrets.SMTP_CONFIG }} > /etc/ssmtp/ssmtp.conf
+      - name: send notification
+        run: |
+          echo $'To: ${{ recipients }}\nFrom: ${{ sender }}\nSubject: GitHub Actions Notification\n\n${{ content }}\n' > msg.txt
+          /usr/sbin/ssmtp  
+        env:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  
