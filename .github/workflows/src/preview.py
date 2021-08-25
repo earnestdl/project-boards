@@ -4,7 +4,7 @@ from api.github import pulls
 # demonstrate that we have access to repo files in 'preview branch'.  
 # from here, we can merge following pull requests into preview and rebuild
 print('Listing folders in root of branch:')
-os.system("ls -l ../../..")
+os.chdir(r"../../..")
 
 state='open'
 branch='preview'
@@ -23,3 +23,5 @@ for pull in pulls(state,branch):
 # test for additional pull request from 'pull-requests' branch to 'preview' branch
 
 # make some more changes to test additional PRs
+
+# making some more great changes
